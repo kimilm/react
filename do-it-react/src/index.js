@@ -3,13 +3,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 // 초기 화면을 구성하는 사용자 코드
-import './index.css';
-import App from './App';
+//import './index.css';
+//import App from './App';
+import './doit-ui/app.css';
+import CoinApp from './08/CoinApp';
+
 import * as serviceWorker from './serviceWorker';
 
 // 리액트 엔진이 화면을 출력하는 코드
 // id가 root인 엘리먼트에 컴포넌트를 출력함
-ReactDOM.render(<App />, document.getElementById('root'));
+//ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<CoinApp />, document.getElementById('root'));
 
 // 서비스워커 구동 코드, 오프라인 모드로 작동하는데 도움이 되는 모듈
 // If you want your app to work offline and load faster, you can change
