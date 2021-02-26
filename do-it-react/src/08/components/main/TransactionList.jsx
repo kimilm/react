@@ -2,11 +2,8 @@ import React, { PureComponent } from 'react';
 
 import Heading from '../../../doit-ui/Heading';
 import Card from '../../../doit-ui/Card';
-
 import TransactionSearchFilterContainer from '../../containers/main/TransactionSearchFilterContainer';
-
 import TransactionTable from './TransactionTable';
-
 import Api from '../../Api';
 
 class TransactionList extends PureComponent {

@@ -43,22 +43,20 @@ class TradeCoinPage extends PureComponent {
                     {name} {typeName}
                   </Text>
                   <Spacing bottom={2}>
-                    {/* <Input
+                    <Input
                       name="currentPrice"
                       label="금액"
                       value={values['currentPrice']}
                       onChange={onChange}
-                    /> */}
-                    <Input name="currentPrice" label="금액" onChange={onChange} />
+                    />
                   </Spacing>
                   <Spacing bottom={2}>
-                    {/* <Input
+                    <Input
                       name="amount"
                       label="수량"
                       value={values['amount']}
                       onChange={onChange}
-                    /> */}
-                    <Input name="amount" label="수량" onChange={onChange} />
+                    />
                   </Spacing>
                   <InlineList spacingBetween={1}>
                     <Button primary>{typeName}</Button>

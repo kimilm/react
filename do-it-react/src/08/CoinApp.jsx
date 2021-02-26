@@ -3,6 +3,8 @@ import { Provider } from 'react-redux';
 
 import AppLayout from './components/AppLayout';
 import MainPage from './components/main/MainPage';
+// import CoinOverview from './components/main/CoinOverview';
+// import TransactionList from './components/main/TransactionList';
 
 import configureStore from './store/configureStore';
 
@@ -17,6 +19,8 @@ class CoinApp extends PureComponent {
         <ModalProvider>
           <AppLayout>
             <MainPage />
+            {/* <CoinOverview />
+                <TransactionList /> */}
           </AppLayout>
         </ModalProvider>
       </Provider>

@@ -5,7 +5,7 @@ const { Provider, Consumer } = React.createContext({});
 
 class FormProvider extends React.PureComponent {
   static Consumer = Consumer;
-  static getDerivedStateFormProps({ initValues }, prevState) {
+  static getDerivedStateFromProps({ initValues }, prevState) {
     const values = initValues !== prevState.initValues ? initValues : prevState.values;
 
     return {
@@ -34,13 +34,15 @@ class FormProvider extends React.PureComponent {
   }
 
   onChange(name, updatedValue) {
-    this.validate(this.state.values);
-    this.setState(({ values }) => ({
-      values: {
-        ...values,
-        [name]: updatedValue,
-      },
-    }));
+    this.setState(
+      ({ values }) => ({
+        values: {
+          ...values,
+          [name]: updatedValue,
+        },
+      }),
+      () => this.validate(this.state.values),
+    );
   }
 
   reset() {

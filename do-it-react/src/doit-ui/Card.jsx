@@ -28,6 +28,6 @@ export default withStyles(({ depth, unit, color }) => ({
     backgroundColor: color.white,
     display: 'flex',
     overflow: 'hidden',
-    marginBotton: unit * 4,
+    marginBottom: unit * 4,
   },
 }))(Card);
