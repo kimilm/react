@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 
 import InlineList from '../../../doit-ui/InlineList';
 import Button from '../../../doit-ui/Button';
@@ -8,7 +9,7 @@ import Input from '../../../doit-ui/Input';
 import Form from '../../../doit-ui/Form';
 
 import Select, { Option } from '../../../doit-ui/Select';
-import Api from '../../Api';
+// import Api from '../../Api';
 
 class TransactionSearchFilter extends PureComponent {
   constructor(props) {
@@ -17,12 +18,25 @@ class TransactionSearchFilter extends PureComponent {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleSubmit(params) {
-    const { setTransactionList } = this.props;
-    Api.get('/transactions', { params }).then(({ data }) => setTransactionList(data));
+    // const { setTransactionList } = this.props;
+    // Api.get('/transactions', { params }).then(({ data }) => setTransactionList(data));
+    // const { requestTransactionList, setFilter } = this.props;
+    const { setFilter, history } = this.props;
+    const cleanedParams = Object.entries(params)
+      .filter(([key, value]) => value !== '')
+      .reduce((obj, [key, value]) => ({ ...obj, [key]: value }), {});
+    // requestTransactionList(cleanedParams);
+    // setFilter(cleanedParams);
+    const querystring = Object.entries(cleanedParams)
+      .map(([key, value]) => `${key}=${value}`)
+      .join('&');
+    history.push(`/?${querystring}`);
   }
   render() {
+    const { initValues } = this.props;
+
     return (
-      <Form onSubmit={this.handleSubmit}>
+      <Form onSubmit={this.handleSubmit} initValues={initValues}>
         <Form.Consumer>
           {({ onChange, values }) => (
             <InlineList spacingBetween={2} verticalAlign="bottom">
@@ -58,6 +72,10 @@ class TransactionSearchFilter extends PureComponent {
   }
 }
 
-TransactionSearchFilter.propTypes = { setTransactionList: PropTypes.func };
+// TransactionSearchFilter.propTypes = { setTransactionList: PropTypes.func };
+TransactionSearchFilter.propTypes = {
+  requestTransactionList: PropTypes.func,
+  setFilter: PropTypes.func,
+};
 
-export default TransactionSearchFilter;
+export default withRouter(TransactionSearchFilter);

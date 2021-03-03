@@ -28,7 +28,7 @@ class CoinDashlet extends PureComponent {
                   openModal(TRADE_COIN_MODAL, { type: 'buy', name, price: priceLabel })
                 }
               >
-                매도
+                매수
               </Button>
               <Button
                 small
@@ -36,7 +36,7 @@ class CoinDashlet extends PureComponent {
                   openModal(TRADE_COIN_MODAL, { type: 'sell', name, price: priceLabel })
                 }
               >
-                매수
+                매도
               </Button>
             </InlineList>
           </Card>

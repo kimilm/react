@@ -8,8 +8,8 @@ export function debounce (func, delay) {
     }
 }
 
-const run = debounce(val => console.log(val), 100);
+// const run = debounce(val => console.log(val), 100);
 
-run('a');
-run('b');
-run(2);
+// run('a');
+// run('b');
+// run(2);

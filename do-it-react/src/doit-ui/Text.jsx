@@ -42,7 +42,6 @@ Text.propTypes = {
   children: PropTypes.node.isRequired,
   bold: PropTypes.bool,
   light: PropTypes.bool,
-  styles: PropTypes.bool,
   large: PropTypes.bool,
   xlarge: PropTypes.bool,
   small: PropTypes.bool,
