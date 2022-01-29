@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'tutorial/react';
 import lifecycle from 'recompose/lifecycle';
 import compose from 'recompose/compose';
 import withLoading from './withLoading';

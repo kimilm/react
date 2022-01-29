@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'tutorial/react';
 
 export default function withHoC(WrappedComponent) {
   const { displayName, name } = WrappedComponent;

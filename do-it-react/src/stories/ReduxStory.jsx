@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'tutorial/react';
 import { storiesOf } from '@storybook/react';
 
 import ReduxApp01 from '../07/ReduxApp01';

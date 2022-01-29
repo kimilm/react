@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent } from 'tutorial/react';
 import { Link } from 'react-router-dom';
 
 import Text from '../../doit-ui/Text';

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'tutorial/react';
 import PropTypes from 'prop-types'; // prop-types 라이브러리 import
 
 class PropsComponent extends Component {

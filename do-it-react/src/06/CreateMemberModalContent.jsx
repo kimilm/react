@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent } from 'tutorial/react';
 import { Consumer } from './ModalContext';
 import Button from '../04/Button';
 import Text from '../04/Text';

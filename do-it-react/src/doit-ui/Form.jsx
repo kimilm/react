@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'tutorial/react';
 import PropTypes from 'prop-types';
 
 const { Provider, Consumer } = React.createContext({});

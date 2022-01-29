@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'tutorial/react';
 import branch from 'recompose/branch';
 
 import Button from '../04/Button';

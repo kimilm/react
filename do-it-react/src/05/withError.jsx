@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'tutorial/react';
 import withStyles, { css } from '../04/withStyles';
 
 export default function (defaultMessage) {

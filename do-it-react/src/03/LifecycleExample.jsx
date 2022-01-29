@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'tutorial/react';
 
 class LifecycleExample extends Component {
   static getDerivedStateFromProps() {

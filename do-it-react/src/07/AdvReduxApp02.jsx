@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent } from 'tutorial/react';
 import { Provider } from 'react-redux';
 import configureStore from './configureStore';
 import { setLoading, resetLoading } from './actions/loadingActions';

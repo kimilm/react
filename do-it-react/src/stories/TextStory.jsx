@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'tutorial/react';
 import { storiesOf } from '@storybook/react';
 
 import Text from '../04/Text';

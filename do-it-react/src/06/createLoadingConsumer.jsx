@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'tutorial/react';
 import PropTypes from 'prop-types';
 import { DEFAULT_KEY, contextPropTypes } from './LoadingProviderWithKey';
 

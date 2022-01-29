@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'tutorial/react';
 import withState from 'recompose/withState';
 
 import Button from '../04/Button';

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'tutorial/react';
 import PropTypes from 'prop-types';
 
 function SFC(props, context) {

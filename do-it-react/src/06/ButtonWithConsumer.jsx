@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'tutorial/react';
 import PropTypes from 'prop-types';
 import Button from '../04/Button';
 import createLoadingConsumer from './createLoadingConsumer';

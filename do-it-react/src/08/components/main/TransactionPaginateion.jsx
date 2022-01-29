@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent } from 'tutorial/react';
 import PropTypes from 'prop-types';
 import Button from '../../../doit-ui/Button';
 import InlineList from '../../../doit-ui/InlineList';

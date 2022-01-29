@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'tutorial/react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { setLocation } from '../actions/routerActions';

@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent } from 'tutorial/react';
 import PropTypes from 'prop-types';
 import { css } from './withStyles';
 import { unit } from './Theme';

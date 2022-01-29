@@ -1,5 +1,5 @@
 // 필수 리액트 구동 모듈
-import React from 'react';
+import React from 'tutorial/react';
 import ReactDOM from 'react-dom';
 
 // 초기 화면을 구성하는 사용자 코드

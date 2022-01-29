@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent } from 'tutorial/react';
 import CoinOverview from './CoinOverview';
 //import TransactionList from './TransactionList';
 import TransactionListContainer from '../../containers/main/TransactionListContainer';

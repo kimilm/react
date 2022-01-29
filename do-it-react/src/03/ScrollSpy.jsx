@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'tutorial/react';
 
 export default class ScrollSpy extends React.Component {
   constructor(props) {

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'tutorial/react';
 import logo from './logo.svg';
 import './App.css';
 import TodaysPlan from './03/TodaysPlan';

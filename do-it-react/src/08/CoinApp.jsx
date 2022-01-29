@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent } from 'tutorial/react';
 import { Provider } from 'react-redux';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';

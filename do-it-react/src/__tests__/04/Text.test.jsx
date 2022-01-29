@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'tutorial/react';
 import { shallow } from 'enzyme';
 
 import Text from '../../04/Text';

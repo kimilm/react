@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'tutorial/react';
 import { shallow } from 'enzyme';
 
 import CheckBox from '../../04/CheckBox';

@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent } from 'tutorial/react';
 
 import Input from '../04/InputWithStyle';
 import { Consumer } from './FormContext';

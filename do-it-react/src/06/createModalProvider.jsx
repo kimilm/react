@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent } from 'tutorial/react';
 import Modal from './Modal';
 import { Provider } from './ModalContext';
 

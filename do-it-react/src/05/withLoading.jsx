@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'tutorial/react';
 
 export default function (loadingMessage = '로딩중') {
   return function withLoading(WrappedCompoment) {

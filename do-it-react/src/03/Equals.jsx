@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'tutorial/react';
 import shallowEqual from 'shallowequal';
 class Equals extends Component {
   render() {

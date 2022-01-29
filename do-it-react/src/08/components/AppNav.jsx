@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent } from 'tutorial/react';
 import { withStyles, css, withStylesPropTypes } from '../../doit-ui/withStyles';
 import Heading from '../../doit-ui/Heading';
 import Text from '../../doit-ui/Text';

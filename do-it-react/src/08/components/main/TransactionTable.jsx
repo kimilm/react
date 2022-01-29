@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent } from 'tutorial/react';
 import PropTypes from 'prop-types';
 import Table from '../../../doit-ui/Table';
 import TableRow from '../../../doit-ui/TableRow';

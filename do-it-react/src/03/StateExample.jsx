@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'tutorial/react';
 
 class StateExample extends Component {
   constructor(props) {

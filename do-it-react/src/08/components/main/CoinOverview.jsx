@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent } from 'tutorial/react';
 
 import Heading from '../../../doit-ui/Heading';
 import InlineList from '../../../doit-ui/InlineList';

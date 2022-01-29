@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'tutorial/react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 

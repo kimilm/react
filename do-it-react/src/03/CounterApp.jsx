@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'tutorial/react';
 import Counter from 'Counter2';
 
 class App extends React.Component {
