@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Hello React 8 - Props</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+        let title = "JSX 표현식(Expression)";
+
+        let cSharp = {
+            title: "C#",
+            description: "내용 들어오는 곳..."
+        }
+
+        function BookTitle() {
+            return (
+                <div className="row">
+                    <h1>My Book</h1>
+                </div>
+            );
+        }
+
+        const BookFooter = () => <p>제가 집필한 책 목록입니다.</p>;
+
+        const Copyright = () => {
+            return (
+                <p>Copyright &copy;</p>
+            );
+        }
+
+        // 컴포넌트는 매개변수로 props를 받는다
+        // 자바스크립트는 다이나믹이기에 props에 뭔가를 던지면 얘가 다 받는다
+        // BookCard 함수에 매개변수를 던지면 props 오브젝트에 저장됨
+        // props == properties
+        function BookCard(props) {
+            // console.log(props);
+            console.log(Object.keys(props));
+            return (
+                <div className="container mb-2">
+                    <div className="row">
+                        <div className="col-12">
+                            {props.title}    
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-2">
+                            {props.title}
+                        </div>
+                        <div className="col-10">
+                            {props.description}
+                        </div>
+                    </div>
+                </div>
+            )
+        }
+
+        function BookList() {
+            return (
+                <>
+                    <BookCard title="제목_01" description="설명_01"/>
+                    <BookCard title={cSharp.title} description={cSharp.description}/>
+                    <BookCard title="ASP.NET &amp; Core를 다루는 기술" description="ASP.NET &amp; Core를 다루는 기술 책입니다."/>
+                </>
+            );
+        }
+
+        function BookApp() {
+            return (
+                <>
+                    <BookTitle />
+                    <BookList />
+                    <BookFooter />
+                    <Copyright />
+                </>
+            );
+        }
+
+        // 최종 랜더링
+        ReactDOM.render(
+            <BookApp />,
+            document.getElementById("root")
+        );
+    </script>
+</body>
+</html>

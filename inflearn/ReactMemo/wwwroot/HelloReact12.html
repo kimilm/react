@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Hello React 12 - 상태 관리와 클릭 이벤트</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        let title = "상태 데이터 저장과 처리";
+
+        let cSharp = {
+            title: "C#",
+            description: "내용 들어오는 곳..."
+        }
+
+        function BookTitle() {
+            return (
+                <div className="row">
+                    <h1>My Book</h1>
+                </div>
+            );
+        }
+
+        const BookFooter = () => <p>제가 집필한 책 목록입니다.</p>;
+
+        const Copyright = () => {
+            return (
+                <p>Copyright &copy;</p>
+            );
+        }
+
+        function BookCard({ title, description, price }) {
+            return (
+                <div className="container mb-2">
+                    <div className="row">
+                        <div className="col-12">
+                            {title}    
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-2">
+                            {title}
+                        </div>
+                        <div className="col-10">
+                            {description}
+                            <hr />
+                            {price + '원'}
+                        </div>
+                    </div>
+                </div>
+            )
+        }
+
+        class BookList extends React.Component {
+            // 클래스형 컴포넌트의 상태는 state 객체를 이용한다
+            state = {
+                theme: 'blue'
+            }
+
+            // state 객체의 갱신은 setState를 이용
+            whiteTheme = () => {
+                this.setState({theme: 'white'});
+            }
+
+            blueTheme = () => {
+                this.setState({theme: 'blue'});
+            }
+
+            // 자바스크립트 onclick
+            // 리액트 onClick + 람다식
+            render() {
+                return (
+                    <>
+                        <div>
+                            {this.state.theme === "white" ? "white theme" : "blue theme"}
+                        </div>
+                        <div>
+                            <button onClick={ () => { this.setState({theme: 'white'}); } }>White_01</button>
+                            <button onClick={ this.whiteTheme }>White_02</button>
+                            <button onClick={ () => { this.setState({theme: 'blue'}); } }>Blue_01</button>
+                            <button onClick={ this.blueTheme }>Blue_02</button>
+                        </div>
+                        <BookCard title={cSharp.title} description={cSharp.description} price={30000}/>
+                        <BookCard title="ASP.NET &amp; Core를 다루는 기술" description="ASP.NET &amp; Core를 다루는 기술 책입니다." price={55000}/>
+                    </>
+                );
+            }
+        }
+
+        // 클래스형 컴포넌트는 render() 사용, render 메서드의 내부에서 return 사용
+        class BookApp extends React.Component {
+            render() {
+                return (
+                    <>
+                        <BookTitle />
+                        <BookList sortOrder="ASC"/>
+                        <BookFooter />
+                        <Copyright />
+                    </>
+                );
+            }
+        }
+
+        // 최종 랜더링
+        ReactDOM.render(
+            <BookApp />,
+            document.getElementById("root")
+        );
+    </script>
+</body>
+</html>

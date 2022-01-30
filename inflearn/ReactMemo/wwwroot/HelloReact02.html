@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Hello React 2</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/javascript">
+        var headerStyle = {
+            "style" : {
+                "color" : "blue"
+            }
+        }
+        ReactDOM.render(React.createElement("h1", headerStyle, "안녕하세요"), document.getElementById("root"));
+
+        // 이렇게도 가능
+        // ReactDOM.render(React.createElement("h1", { "style" : { "color" : "blue" } }, "안녕하세요"), document.getElementById("root"));
+    </script>
+</body>
+</html>
