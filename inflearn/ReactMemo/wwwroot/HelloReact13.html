@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Hello React 13 - 컬렉션 형태의 데이터 출력</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        let title = "상태 데이터 저장과 처리";
+
+        function BookTitle() {
+            return (
+                <div className="row">
+                    <h1>My Book</h1>
+                </div>
+            );
+        }
+
+        const BookFooter = () => <p>제가 집필한 책 목록입니다.</p>;
+
+        const Copyright = () => {
+            return (
+                <p>Copyright &copy;</p>
+            );
+        }
+
+        function BookCard({ title, description, content, price, imageUrl}) {
+            return (
+                <div className="container mb-2">
+                    <div className="row" style={{'cursor': 'pointer'}}>
+                        <div className="col-2 p-1 card">
+                            <span className="d-none">{title}</span>
+                            <span className="">
+                                <img src={imageUrl} alt={title} className="img-fluid" />
+                            </span>
+                        </div>
+                        <div className="col-10 p-1 card">
+                            <h2 className="card-header">
+                                <a href="https://www.gilbut.co.kr/book/view?bookcode=BN002765" target="_blank"><strong>{title}</strong></a>
+                            </h2>
+                            <p>
+                                <strong>{description}</strong>
+                                <br />
+                                {content}
+                            </p>
+                            <div className="p-1" style={{"marginTop": "auto"}}>
+                                <a href="/BookList"><span className="badge badge-primary">학습 가이드</span></a>
+                                <a href="/Books/Errata.aspx"><span className="badge badge-secondary">오탈자 정보</span></a>
+                                <a href="/BoardIndex?BoardName=Qna"><span className="badge badge-danger">Q&amp;A</span></a>
+                                <a href="https://www.gilbut.co.kr/book/view?bookcode=BN002765" target="_blank"><span className="badge badge-info">길벗 도서 소개</span></a>
+                                <a href="https://www.youtube.com/playlist?list=PLO56HZSjrPTB4NxAsEP8HRk6YKBDLbp7m" target="_blank"><span className="badge badge-success">동영상 강의</span></a>
+                                <a href="https://github.com/gilbutITbook/006890" target="_blank"><span className="badge badge-dark">전체 소스 코드(GitHub)</span></a>
+                                <a href="https://bit.ly/Csharp-textbook" target="_blank"><span className="badge badge-warning">도서 보기</span></a>
+                                <a href="https://bit.ly/2TvAyFj" target="_blank"><span className="badge badge-danger">구매</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )
+        }
+
+        class BookList extends React.Component {
+            state = {
+                theme: 'blue'
+            }
+
+            whiteTheme = () => {
+                this.setState({theme: 'white'});
+            }
+
+            blueTheme = () => {
+                this.setState({theme: 'blue'});
+            }
+
+            render() {
+                return (
+                    <>
+                        <div>
+                            {this.state.theme === "white" ? "white theme" : "blue theme"}
+                        </div>
+                        <div>
+                            <button onClick={ () => { this.setState({theme: 'white'}); } }>White_01</button>
+                            <button onClick={ this.whiteTheme }>White_02</button>
+                            <button onClick={ () => { this.setState({theme: 'blue'}); } }>Blue_01</button>
+                            <button onClick={ this.blueTheme }>Blue_02</button>
+                        </div>
+                        {
+                            this.props.books.map(book => {
+                                return <BookCard key={book.id} title={book.title} description={book.description} content={book.content} price={book.price} imageUrl={book.imageUrl}/>
+                            })
+                        }
+                    </>
+                );
+            }
+        }
+
+        const books = [
+            { id: 1, title: "C# 교과서", description: "C# 설명", content: "C#의 쓰임새와 기초 문법부터 컬렉션, 제네릭, LINQ, 개체 지향, 동적 형식, 비동기 프로그래밍과 같은 활용과 확장 기능까지 입문자에게 필요한 모든 것을 설명합니다.", price: 30000, imageUrl: "https://www.dotnetkorea.com/Books/images/SeeSharpBook.png" },
+            { id: 2, title: "ASP.NET & Core를 다루는 기술", description: "ASP.NET Core 설명", content: "Microsoft 웹 개발 기술의 집합체인 ASP.NET과 ASP.NET Core를 이용하여 웹 응용프로그램을 제작하는 쉽고, 빠르고, 강력한 기술인 ASP.NET의 전체를 다룹니다.", price: 55000, imageUrl: "https://www.dotnetkorea.com/Books/images/AspNetCore.jpg"},
+        ];
+
+        class BookApp extends React.Component {
+
+            render() {
+                return (
+                    <>
+                        <BookTitle />
+                        <BookList sortOrder="ASC" books={books}/>
+                        <BookFooter />
+                        <Copyright />
+                    </>
+                );
+            }
+        }
+
+        // 최종 랜더링
+        ReactDOM.render(
+            <BookApp />,
+            document.getElementById("root")
+        );
+    </script>
+</body>
+</html>
