@@ -8,11 +8,12 @@ import { About } from './components/About';
 import { Contact } from './components/Contact';
 
 import './custom.css'
+import ReactFragmentDemo from './samples/ReactFragmentDemo';
 
 export default class App extends Component {
   static displayName = App.name;
 
-  render () {
+  render() {
     return (
       <Layout>
         <Route exact path='/' component={Home} />
@@ -20,6 +21,7 @@ export default class App extends Component {
         <Route path='/fetch-data' component={FetchData} />
         <Route path='/about' component={About} />
         <Route path='/contact' component={Contact} />
+        <Route path='/reactFragmentDemo' component={ReactFragmentDemo} />
       </Layout>
     );
   }
