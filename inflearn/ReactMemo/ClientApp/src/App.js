@@ -10,6 +10,7 @@ import { Contact } from './components/Contact';
 import './custom.css'
 import ReactFragmentDemo from './samples/ReactFragmentDemo';
 import { StateDemo } from './samples/StateDemo';
+import { StateDescription } from './samples/StateDescription';
 
 export default class App extends Component {
   static displayName = App.name;
@@ -24,6 +25,7 @@ export default class App extends Component {
         <Route path='/contact' component={Contact} />
         <Route path='/reactFragmentDemo' component={ReactFragmentDemo} />
         <Route path='/stateDemo' component={StateDemo} />
+        <Route path='/stateDescription' component={StateDescription} />
       </Layout>
     );
   }
