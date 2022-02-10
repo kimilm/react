@@ -13,6 +13,7 @@ import { StateDemo } from './samples/StateDemo';
 import { StateDescription } from './samples/StateDescription';
 import OnClickEventHandler from './components/event_handler/OnClickEventHandler';
 import { OneWayBindingDemo } from './samples/OneWayBindingDemo';
+import { ToDoListInMemory } from './components/ToDoListInMemory';
 
 export default class App extends Component {
   static displayName = App.name;
@@ -30,6 +31,7 @@ export default class App extends Component {
         <Route path='/stateDescription' component={StateDescription} />
         <Route path='/onClickEventHandler' component={OnClickEventHandler} />
         <Route path='/oneWayBinding' component={OneWayBindingDemo} />
+        <Route path='/toDoListInMemory' component={ToDoListInMemory} />
       </Layout>
     );
   }
