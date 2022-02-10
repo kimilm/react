@@ -12,6 +12,7 @@ import ReactFragmentDemo from './samples/ReactFragmentDemo';
 import { StateDemo } from './samples/StateDemo';
 import { StateDescription } from './samples/StateDescription';
 import OnClickEventHandler from './components/event_handler/OnClickEventHandler';
+import { OneWayBindingDemo } from './samples/OneWayBindingDemo';
 
 export default class App extends Component {
   static displayName = App.name;
@@ -28,6 +29,7 @@ export default class App extends Component {
         <Route path='/stateDemo' component={StateDemo} />
         <Route path='/stateDescription' component={StateDescription} />
         <Route path='/onClickEventHandler' component={OnClickEventHandler} />
+        <Route path='/oneWayBinding' component={OneWayBindingDemo} />
       </Layout>
     );
   }
