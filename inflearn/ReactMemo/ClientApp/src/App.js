@@ -11,6 +11,7 @@ import './custom.css'
 import ReactFragmentDemo from './samples/ReactFragmentDemo';
 import { StateDemo } from './samples/StateDemo';
 import { StateDescription } from './samples/StateDescription';
+import OnClickEventHandler from './components/event_handler/OnClickEventHandler';
 
 export default class App extends Component {
   static displayName = App.name;
@@ -26,6 +27,7 @@ export default class App extends Component {
         <Route path='/reactFragmentDemo' component={ReactFragmentDemo} />
         <Route path='/stateDemo' component={StateDemo} />
         <Route path='/stateDescription' component={StateDescription} />
+        <Route path='/onClickEventHandler' component={OnClickEventHandler} />
       </Layout>
     );
   }
