@@ -66,6 +66,6 @@
     <Delete Files="$(BaseIntermediateOutputPath)\project.assets.json" />
   </Target>
   <ItemGroup>
-    <Build Include="Books\Books.sql" />
+    <Build Include="Books\01_Book.sql" />
   </ItemGroup>
 </Project>
