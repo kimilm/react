@@ -11,17 +11,24 @@ export class BooksCreate extends Component {
             created: null
         }
 
+        // 이벤트 바인딩
         this.handleChangeTitle = this.handleChangeTitle.bind(this);
-        this.handleChangeDescription = this.handleChangeDescription.bind(this);
+        // this.handleChangeDescription = this.handleChangeDescription.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.goIndex = this.goIndex.bind(this);
     }
 
+    // 함수로 이벤트 처리기를 작성하고 생성자에서 바인딩
     handleChangeTitle(event) {
         this.setState({ title: event.target.value });
     }
 
-    handleChangeDescription(event) {
+    // handleChangeDescription(event) {
+    //     this.setState({ description: event.target.value });
+    // }
+    // 람다식으로 변경하면
+    // 생성자에서 이벤트 바인딩 하지 않아도 된다
+    handleChangeDescription = (event) => {
         this.setState({ description: event.target.value });
     }
 
