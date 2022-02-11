@@ -1,15 +1,21 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
 
 using BookApp.Shared;
 using Microsoft.EntityFrameworkCore;
 
-namespace ReactMemo
+namespace BookApp.Apis
 {
     public class Startup
     {
@@ -24,17 +30,38 @@ namespace ReactMemo
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllersWithViews();
-
-            // In production, the React files will be served from this directory
-            services.AddSpaStaticFiles(configuration =>
+            services.AddControllers();
+            services.AddSwaggerGen(c =>
             {
-                configuration.RootPath = "ClientApp/build";
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "BookApp.Apis", Version = "v1" });
             });
 
+            /// BookApp 관련 의존성(종속성) 주입 관련 코드만 따로 관리
             AddDependencyInjectionContainerForBookApp(services);
+
+            #region CORS
+            //[CORS][1] CORS 사용 등록
+            //[CORS][1][1] 기본: 모두 허용
+            services.AddCors(options =>
+            {
+                //[A] [EnableCors] 특성으로 적용 가능
+                options.AddDefaultPolicy(builder =>
+                {
+                    builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+                });
+                //[B] [EnableCors("AllowAnyOrigin")] 형태로 적용 가능
+                options.AddPolicy("AllowAnyOrigin", builder =>
+                    builder
+                        .AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader());
+            });
+            #endregion
         }
 
+        /// <summary>
+        /// BookApp 관련 의존성(종속성) 주입 관련 코드만 따로 관리
+        /// </summary>
         private void AddDependencyInjectionContainerForBookApp(IServiceCollection services)
         {
             // BookAppDbContext.cs Inject: New DbContext Add
@@ -51,35 +78,21 @@ namespace ReactMemo
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
+                app.UseSwagger();
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "BookApp.Apis v1"));
             }
 
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
-            app.UseSpaStaticFiles();
 
             app.UseRouting();
 
+            app.UseAuthorization();
+
+            app.UseCors();
+
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller}/{action=Index}/{id?}");
-            });
-
-            app.UseSpa(spa =>
-            {
-                spa.Options.SourcePath = "ClientApp";
-
-                if (env.IsDevelopment())
-                {
-                    spa.UseReactDevelopmentServer(npmScript: "start");
-                }
+                endpoints.MapControllers();
             });
         }
     }

@@ -14,6 +14,15 @@ import { StateDescription } from './samples/StateDescription';
 import OnClickEventHandler from './components/event_handler/OnClickEventHandler';
 import { OneWayBindingDemo } from './samples/OneWayBindingDemo';
 import { ToDoListInMemory } from './components/ToDoListInMemory';
+import FunctionStateDemo from './samples/FunctionStateDemo';
+import UseEffectDemo from './samples/UseEffectDemo';
+import UseEffectFetchApi from './samples/UseEffectFetchApi';
+import { FetchApiPractice } from './samples/FetchApiPractice';
+import { TextBoxOnChangeEventHandler } from './samples/TextBoxOnChangeEventHandler';
+import { BooksIndex } from './components/books/BooksIndex';
+import { BooksCreate } from './components/books/BooksCreate';
+import { BooksEdit } from './components/books/BooksEdit';
+import { BooksDelete } from './components/books/BooksDelete';
 
 export default class App extends Component {
   static displayName = App.name;
@@ -32,6 +41,15 @@ export default class App extends Component {
         <Route path='/onClickEventHandler' component={OnClickEventHandler} />
         <Route path='/oneWayBinding' component={OneWayBindingDemo} />
         <Route path='/toDoListInMemory' component={ToDoListInMemory} />
+        <Route path='/functionStateDemo' component={FunctionStateDemo} />
+        <Route path='/useEffectDemo' component={UseEffectDemo} />
+        <Route path='/useEffectFetchApi' component={UseEffectFetchApi} />
+        <Route path='/fetchApiPractice' component={FetchApiPractice} />
+        <Route path='/textBoxOnChangeEventHandler' component={TextBoxOnChangeEventHandler} />
+        <Route path={['/books', '/books/index']} component={BooksIndex} exact />
+        <Route path='/books/create' component={BooksCreate} exact={true} />
+        <Route path='/books/edit/:id' component={BooksEdit} exact />
+        <Route path='/books/delete/:id' component={BooksDelete} exact />
       </Layout>
     );
   }

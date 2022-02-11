@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "AxWjcbIi1FS61bSUx3K0XrRg+S50XruJtJdilznZkV1eM1ZeJRGnseAqNn/k7N56KJKceC2DFxsJTTXyy0TuAg==",
+  "success": true,
+  "projectFilePath": "/Users/kimilm/git/react/inflearn/BookApp.SqlServer/BookApp.SqlServer.sqlproj",
+  "expectedPackageFiles": [
+    "/Users/kimilm/.nuget/packages/microsoft.netframework.referenceassemblies/1.0.0/microsoft.netframework.referenceassemblies.1.0.0.nupkg.sha512",
+    "/Users/kimilm/.nuget/packages/microsoft.netframework.referenceassemblies.net46/1.0.0/microsoft.netframework.referenceassemblies.net46.1.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
