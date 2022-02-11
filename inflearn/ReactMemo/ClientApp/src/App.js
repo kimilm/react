@@ -15,6 +15,7 @@ import OnClickEventHandler from './components/event_handler/OnClickEventHandler'
 import { OneWayBindingDemo } from './samples/OneWayBindingDemo';
 import { ToDoListInMemory } from './components/ToDoListInMemory';
 import FunctionStateDemo from './samples/FunctionStateDemo';
+import UseEffectDemo from './samples/UseEffectDemo';
 
 export default class App extends Component {
   static displayName = App.name;
@@ -34,6 +35,7 @@ export default class App extends Component {
         <Route path='/oneWayBinding' component={OneWayBindingDemo} />
         <Route path='/toDoListInMemory' component={ToDoListInMemory} />
         <Route path='/functionStateDemo' component={FunctionStateDemo} />
+        <Route path='/useEffectDemo' component={UseEffectDemo} />
       </Layout>
     );
   }
