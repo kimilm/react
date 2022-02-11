@@ -1,3 +1,5 @@
+using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BookApp.Shared
@@ -29,6 +31,11 @@ namespace BookApp.Shared
         /// </summary>
         [Display(Name = "책 설명")]
         public int Descript { get; set; }
+
+        /// <summary>
+        /// 등록일
+        /// </summary>
+        public DateTime? Created { get; set; }
     }
 
     [Table("Books")]
