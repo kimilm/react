@@ -1,0 +1,45 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/kimilm/git/react/inflearn/BookApp.SqlServer/BookApp.SqlServer.sqlproj": {}
+  },
+  "projects": {
+    "/Users/kimilm/git/react/inflearn/BookApp.SqlServer/BookApp.SqlServer.sqlproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/kimilm/git/react/inflearn/BookApp.SqlServer/BookApp.SqlServer.sqlproj",
+        "projectName": "BookApp.SqlServer",
+        "projectPath": "/Users/kimilm/git/react/inflearn/BookApp.SqlServer/BookApp.SqlServer.sqlproj",
+        "packagesPath": "/Users/kimilm/.nuget/packages/",
+        "outputPath": "/Users/kimilm/git/react/inflearn/BookApp.SqlServer/obj/",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "/Users/kimilm/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net46"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net46": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net46": {
+          "dependencies": {
+            "Microsoft.NETFramework.ReferenceAssemblies": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.0, )"
+            }
+          }
+        }
+      }
+    }
+  }
+}
