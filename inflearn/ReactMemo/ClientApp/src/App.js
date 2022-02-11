@@ -18,6 +18,7 @@ import FunctionStateDemo from './samples/FunctionStateDemo';
 import UseEffectDemo from './samples/UseEffectDemo';
 import UseEffectFetchApi from './samples/UseEffectFetchApi';
 import { FetchApiPractice } from './samples/FetchApiPractice';
+import { TextBoxOnChangeEventHandler } from './samples/TextBoxOnChangeEventHandler';
 
 export default class App extends Component {
   static displayName = App.name;
@@ -40,6 +41,7 @@ export default class App extends Component {
         <Route path='/useEffectDemo' component={UseEffectDemo} />
         <Route path='/useEffectFetchApi' component={UseEffectFetchApi} />
         <Route path='/fetchApiPractice' component={FetchApiPractice} />
+        <Route path='/textBoxOnChangeEventHandler' component={TextBoxOnChangeEventHandler} />
       </Layout>
     );
   }
