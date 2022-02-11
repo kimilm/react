@@ -19,6 +19,7 @@ import UseEffectDemo from './samples/UseEffectDemo';
 import UseEffectFetchApi from './samples/UseEffectFetchApi';
 import { FetchApiPractice } from './samples/FetchApiPractice';
 import { TextBoxOnChangeEventHandler } from './samples/TextBoxOnChangeEventHandler';
+import { BooksIndex } from './components/books/BooksIndex';
 
 export default class App extends Component {
   static displayName = App.name;
@@ -42,6 +43,7 @@ export default class App extends Component {
         <Route path='/useEffectFetchApi' component={UseEffectFetchApi} />
         <Route path='/fetchApiPractice' component={FetchApiPractice} />
         <Route path='/textBoxOnChangeEventHandler' component={TextBoxOnChangeEventHandler} />
+        <Route path='/booksIndex' component={BooksIndex} />
       </Layout>
     );
   }
