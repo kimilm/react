@@ -16,6 +16,8 @@ import { OneWayBindingDemo } from './samples/OneWayBindingDemo';
 import { ToDoListInMemory } from './components/ToDoListInMemory';
 import FunctionStateDemo from './samples/FunctionStateDemo';
 import UseEffectDemo from './samples/UseEffectDemo';
+import UseEffectFetchApi from './samples/UseEffectFetchApi';
+import { FetchApiPractice } from './samples/FetchApiPractice';
 
 export default class App extends Component {
   static displayName = App.name;
@@ -36,6 +38,8 @@ export default class App extends Component {
         <Route path='/toDoListInMemory' component={ToDoListInMemory} />
         <Route path='/functionStateDemo' component={FunctionStateDemo} />
         <Route path='/useEffectDemo' component={UseEffectDemo} />
+        <Route path='/useEffectFetchApi' component={UseEffectFetchApi} />
+        <Route path='/fetchApiPractice' component={FetchApiPractice} />
       </Layout>
     );
   }
