@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 export class BooksIndex extends Component {
     constructor(props) {
@@ -11,7 +12,9 @@ export class BooksIndex extends Component {
     }
 
     componentDidMount() {
-        this.populateBooksData();
+        // this.populateBooksData();
+        // this.populateBooksDataWithAxios();
+        this.populateBooksDataWithAxiosAsync();
     }
 
     static renderBooksTable(books) {
@@ -54,6 +57,19 @@ export class BooksIndex extends Component {
     async populateBooksData() {
         const response = await fetch('/api/Books');
         const data = await response.json();
+        this.setState({ books: data, loading: false });
+    }
+
+    populateBooksDataWithAxios() {
+        axios.get("/api/Books").then(response => {
+            const data = response.data;
+            this.setState({ books: data, loading: false });
+        })
+    }
+
+    async populateBooksDataWithAxiosAsync() {
+        const response = await axios.get("/api/Books");
+        const data = response.data;
         this.setState({ books: data, loading: false });
     }
 }
