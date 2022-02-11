@@ -6,6 +6,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
+using BookApp.Shared;
+using Microsoft.EntityFrameworkCore;
+
 namespace ReactMemo
 {
     public class Startup
@@ -28,6 +31,18 @@ namespace ReactMemo
             {
                 configuration.RootPath = "ClientApp/build";
             });
+
+            AddDependencyInjectionContainerForBookApp(services);
+        }
+
+        private void AddDependencyInjectionContainerForBookApp(IServiceCollection services)
+        {
+            // BookAppDbContext.cs Inject: New DbContext Add
+            services.AddEntityFrameworkSqlServer().AddDbContext<BookAppDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            // IBookRepository.cs Inject: DI Container에 서비스(리포지토리) 등록
+            services.AddTransient<IBookRepository, BookRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

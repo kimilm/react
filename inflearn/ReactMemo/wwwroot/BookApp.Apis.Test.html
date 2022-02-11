@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        var url = "https://localhost:5001/api/Books";
+
+        fetch(url).then(response => response.json()).then(data => console.log(data));
+    </script>
+</body>
+</html>
