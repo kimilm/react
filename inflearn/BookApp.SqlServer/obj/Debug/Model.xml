@@ -118,7 +118,7 @@
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="SqlSimpleColumn" Name="[dbo].[Books].[Descript]">
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Books].[Description]">
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">

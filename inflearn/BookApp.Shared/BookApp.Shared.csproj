@@ -1,15 +1,26 @@
 <Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>Dul.BookApp.Shared</PackageId>
+    <Authors>RedPlus</Authors>
+    <Company>Hawaso</Company>
+    <Description>BookApp.Shard CRUD APIs</Description>
+    <Version>1.0.1</Version>
   </PropertyGroup>
+
   <ItemGroup>
-    <PackageReference Include="Dul" Version="1.2.8"/>
-    <PackageReference Include="Microsoft.Data.SqlClient" Version="4.1.0"/>
-    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0"/>
-    <PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0"/>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.1"/>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.1"/>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.1"/>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="5.0.1"/>
+    <PackageReference Include="Dul" Version="1.2.4" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="1.1.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="3.1.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="System.ComponentModel.Annotations" Version="4.7.0" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.7.0" />
   </ItemGroup>
+
 </Project>

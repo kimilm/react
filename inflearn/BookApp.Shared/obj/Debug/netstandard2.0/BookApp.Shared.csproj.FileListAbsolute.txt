@@ -1,0 +1,9 @@
+/Users/kimilm/git/react/inflearn/BookApp.Shared/bin/Debug/netstandard2.0/BookApp.Shared.deps.json
+/Users/kimilm/git/react/inflearn/BookApp.Shared/bin/Debug/netstandard2.0/BookApp.Shared.dll
+/Users/kimilm/git/react/inflearn/BookApp.Shared/bin/Debug/netstandard2.0/BookApp.Shared.pdb
+/Users/kimilm/git/react/inflearn/BookApp.Shared/obj/Debug/netstandard2.0/BookApp.Shared.csprojAssemblyReference.cache
+/Users/kimilm/git/react/inflearn/BookApp.Shared/obj/Debug/netstandard2.0/BookApp.Shared.AssemblyInfoInputs.cache
+/Users/kimilm/git/react/inflearn/BookApp.Shared/obj/Debug/netstandard2.0/BookApp.Shared.AssemblyInfo.cs
+/Users/kimilm/git/react/inflearn/BookApp.Shared/obj/Debug/netstandard2.0/BookApp.Shared.csproj.CoreCompileInputs.cache
+/Users/kimilm/git/react/inflearn/BookApp.Shared/obj/Debug/netstandard2.0/BookApp.Shared.dll
+/Users/kimilm/git/react/inflearn/BookApp.Shared/obj/Debug/netstandard2.0/BookApp.Shared.pdb

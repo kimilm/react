@@ -16,7 +16,7 @@ namespace BookApp.Shared.tests
         {
             #region [0] DbContextOptions<T> Object Creation and ILoggerFactory Object Creation
             //[0] DbContextOptions<T> Object Creation and ILoggerFactory Object Creation
-            var options = new DbContextOptionsBuilder<BookAppDBContext>()
+            var options = new DbContextOptionsBuilder<BookAppDbContext>()
                 .UseInMemoryDatabase(databaseName: $"BookApp{Guid.NewGuid()}").Options;
             //.UseSqlServer("server=(localdb)\\mssqllocaldb;database=BookApp;integrated security=true;").Options;
 
@@ -27,7 +27,7 @@ namespace BookApp.Shared.tests
             #region [1] AddAsync() Method Test
             //[1] AddAsync() Method Test
             //[1][1] Repository 클래스를 사용하여 저장
-            using (var context = new BookAppDBContext(options))
+            using (var context = new BookAppDbContext(options))
             {
                 context.Database.EnsureCreated(); // 데이터베이스가 만들어져 있는지 확인
 
@@ -39,7 +39,7 @@ namespace BookApp.Shared.tests
                 await repository.AddAsync(model); // Id: 1
             }
             //[1][2] DbContext 클래스를 통해서 개수 및 레코드 확인 
-            using (var context = new BookAppDBContext(options))
+            using (var context = new BookAppDbContext(options))
             {
                 //[C] Assert: 현재 총 데이터 개수가 1개인 것과, 1번 데이터의 Title이 "C# 교과서"인지 확인합니다. 
                 Assert.AreEqual(1, await context.Books.CountAsync());
@@ -51,7 +51,7 @@ namespace BookApp.Shared.tests
 
             #region [2] GetAllAsync() Method Test
             //[2] GetAllAsync() Method Test
-            using (var context = new BookAppDBContext(options))
+            using (var context = new BookAppDbContext(options))
             {
                 // 트랜잭션 관련 코드는 InMemoryDatabase 공급자에서는 지원 X
                 // using (var transaction = context.Database.BeginTransaction()) { transaction.Commit(); }
@@ -64,7 +64,7 @@ namespace BookApp.Shared.tests
                 await repository.AddAsync(model); // Id: 2
                 await repository.AddAsync(new Book { Title = "타입스크립트", Description = "TypeScript" }); // Id: 3
             }
-            using (var context = new BookAppDBContext(options))
+            using (var context = new BookAppDbContext(options))
             {
                 //[C] Assert
                 var repository = new BookRepository(context, factory);
@@ -75,11 +75,11 @@ namespace BookApp.Shared.tests
 
             #region [3] GetByIdAsync() Method Test
             //[3] GetByIdAsync() Method Test
-            using (var context = new BookAppDBContext(options))
+            using (var context = new BookAppDbContext(options))
             {
                 // Empty
             }
-            using (var context = new BookAppDBContext(options))
+            using (var context = new BookAppDbContext(options))
             {
                 var repository = new BookRepository(context, factory);
                 var model = await repository.GetByIdAsync(2);
@@ -90,11 +90,11 @@ namespace BookApp.Shared.tests
 
             #region [4] UpdateAsync() Method Test
             //[4] UpdateAsync() Method Test
-            using (var context = new BookAppDBContext(options))
+            using (var context = new BookAppDbContext(options))
             {
                 // Empty
             }
-            using (var context = new BookAppDBContext(options))
+            using (var context = new BookAppDbContext(options))
             {
                 var repository = new BookRepository(context, factory);
                 var model = await repository.GetByIdAsync(2);
@@ -114,11 +114,11 @@ namespace BookApp.Shared.tests
 
             #region [5] DeleteAsync() Method Test
             //[5] DeleteAsync() Method Test
-            using (var context = new BookAppDBContext(options))
+            using (var context = new BookAppDbContext(options))
             {
                 // Empty
             }
-            using (var context = new BookAppDBContext(options))
+            using (var context = new BookAppDbContext(options))
             {
                 var repository = new BookRepository(context, factory);
                 await repository.DeleteAsync(2);
