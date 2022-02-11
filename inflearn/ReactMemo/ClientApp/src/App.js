@@ -20,6 +20,9 @@ import UseEffectFetchApi from './samples/UseEffectFetchApi';
 import { FetchApiPractice } from './samples/FetchApiPractice';
 import { TextBoxOnChangeEventHandler } from './samples/TextBoxOnChangeEventHandler';
 import { BooksIndex } from './components/books/BooksIndex';
+import { BooksCreate } from './components/books/BooksCreate';
+import { BooksEdit } from './components/books/BooksEdit';
+import { BooksDelete } from './components/books/BooksDelete';
 
 export default class App extends Component {
   static displayName = App.name;
@@ -43,7 +46,10 @@ export default class App extends Component {
         <Route path='/useEffectFetchApi' component={UseEffectFetchApi} />
         <Route path='/fetchApiPractice' component={FetchApiPractice} />
         <Route path='/textBoxOnChangeEventHandler' component={TextBoxOnChangeEventHandler} />
-        <Route path='/booksIndex' component={BooksIndex} />
+        <Route path={['/books', '/books/index']} component={BooksIndex} exact />
+        <Route path='/books/create' component={BooksCreate} exact={true} />
+        <Route path='/books/edit/:id' component={BooksEdit} exact />
+        <Route path='/books/delete/:id' component={BooksDelete} exact />
       </Layout>
     );
   }
