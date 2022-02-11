@@ -91,5 +91,12 @@ namespace BookApp.Shared
             return false;
         }
         #endregion
+
+        #region GetArticlesAsync
+        public Task<ArticleSet<Book, int>> GetArticlesAsync<TParentIdentifier>(int pageIndex, int pageSize, string searchField, string searchQuery, string sortOrder, TParentIdentifier parentIdentifier)
+        {
+            throw new NotImplementedException();
+        }
+        #endregion    
     }
 }
